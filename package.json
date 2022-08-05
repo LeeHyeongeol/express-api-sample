@@ -1,0 +1,33 @@
+{
+  "name": "express-api-sample",
+  "version": "1.0.0",
+  "description": "express를 활용한 API 구축",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeeHyeongeol/express-api-sample.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LeeHyeongeol/express-api-sample/issues"
+  },
+  "homepage": "https://github.com/LeeHyeongeol/express-api-sample#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "date-fns": "^2.29.1",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "joi": "^17.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "multer": "^1.4.5-lts.1",
+    "nanoid": "^4.0.0",
+    "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.21.3",
+    "supertest": "^6.2.4"
+  }
+}
