@@ -11,7 +11,7 @@ const missingPath = (req, res, next) => {
   const isContent = url.includes('/images');
 
   const message = isContent ? 'NOT_FOUND' : 'MISSING_PATH';
-  next(message);
+  next(message); // error 메시지를 넘긴다
 };
 
 module.exports = missingPath;

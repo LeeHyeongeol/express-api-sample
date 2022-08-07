@@ -27,6 +27,7 @@ const refresh = async (res, refreshToken) => {
 
 // access가 있으면 해독후 유저정보 확인
 // access가 없으면 refresh 사용
+// 엑세스 토큰, 리프레시 토큰 검증
 const consumeToken = async (req, res, next) => {
   const { access_token: accessToken, refresh_token: refreshToken } =
     req.cookies;

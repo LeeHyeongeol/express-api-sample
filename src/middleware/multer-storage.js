@@ -19,3 +19,5 @@ function createMulterStorage() {
 
 const storage = createMulterStorage();
 const multerStorage = multer({ storage });
+
+module.exports = multerStorage;
