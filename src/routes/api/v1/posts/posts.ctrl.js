@@ -25,6 +25,7 @@ exports.write = async (req, res, next) => {
       fkUserId: userId,
     });
   } catch (err) {
+    // next() 함수로 어떠한 내용을 전달하는 경우('route'라는 문자열 제외), Express는 현재의 요청에 오류가 있는 것으로 간주하며, 오류 처리와 관련되지 않은 나머지 라우팅 및 미들웨어 함수를 건너뜁니다.
     next(err);
     return;
   }

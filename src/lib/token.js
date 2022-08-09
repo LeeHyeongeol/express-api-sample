@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 
-const { SECRET_KEY, CLIENT_HOST, APU_HOST } = process.env;
+const { SECRET_KEY, CLIENT_HOST, API_HOST } = process.env;
 
 if (!SECRET_KEY || !CLIENT_HOST || !API_HOST) {
   throw new Error('MISSING_ENVAR');
@@ -35,6 +35,13 @@ const setTokenCookie = (res, tokens) => {
     httpOnly: true,
     domain: !IS_DEV ? CLIENT_HOST : undefined,
     maxAge: 60 * 60 * 24 * 30,
+    secure: !IS_DEV,
+  });
+
+  res.cookie('refresh_token', refreshToken, {
+    httpOnly: true,
+    domain: !IS_DEV ? CLIENT_HOST : undefined,
+    maxAge: 60 * 60 * 24 * 30, // 30day
     secure: !IS_DEV,
   });
 };

@@ -5,7 +5,7 @@ const { decodeToken, setTokenCookie } = require('lib/token');
 // access, refresh 둘다 없는 경우
 // access 만료 후 refeesh 만 있는 경우 -> refresh의 uuid를 가지고 유저 식별 후 새로운 access 생성 후 클라로 전달
 
-// 리프레시 토큰 생성
+// 리프레시 토큰 해독 및 생성
 const refresh = async (res, refreshToken) => {
   try {
     const decoded = await decodeToken(refreshToken);
@@ -14,7 +14,7 @@ const refresh = async (res, refreshToken) => {
     if (!user) {
       throw new Error('Invalid User error');
     }
-
+    // 왜 인자에 해독한 토큰의 만료기간이 들어가는지?
     const tokens = await user.refreshUserToken(decoded.exp, refreshToken);
     setTokenCookie(res, tokens);
 
